@@ -1,0 +1,47 @@
+.table {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.table.table-fixed {
+    table-layout: fixed
+}
+
+.table.vtop .td {
+    vertical-align: top;
+}
+
+.table.vbottom .td {
+    vertical-align: baseline;
+}
+
+.table.middle .td {
+    vertical-align: middle;
+}
+
+.tr {
+    display: table-row;
+}
+
+.td {
+    display: table-cell;
+    border-spacing: 0;
+}
+
+.td.w0 {
+    width: 0;
+}
+
+.td.w100 {
+    width: 100%;
+}
+
+.td.h100 {
+    height: 100%;
+}
+
+.td.bottom {
+    vertical-align: bottom;
+}

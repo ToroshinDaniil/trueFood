@@ -1,0 +1,43 @@
+{
+  "name": "truefood",
+  "version": "1.0.0",
+  "description": "diploma",
+  "author": "Toroshin ",
+  "private": true,
+  "scripts": {
+    "dev": "node fix-package.js && node ./server/site/index.js dev",
+    "build": "node fix-package.js && node ./node_modules/nuxt/bin/nuxt build",
+    "start": "node ./server/site/index.js production",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint"
+  },
+  "config": {
+    "nuxt": {
+      "host": "0.0.0.0",
+      "port": "3000"
+    }
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "blob": "0.0.4",
+    "body-parser": "^1.18.2",
+    "formidable": "^1.2.1",
+    "image-size": "^0.6.2",
+    "node-sass": "^4.11.0",
+    "nuxt": "^1.0.0",
+    "regexp": "^1.0.0",
+    "sass-loader": "^7.0.1",
+    "vue-localstorage": "^0.6.2",
+    "vue-ls": "^3.0.5",
+    "vue-table-component": "^1.9.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.1",
+    "cross-env": "^5.1.6",
+    "eslint": "^4.15.0",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-vue": "^4.0.0"
+  }
+}

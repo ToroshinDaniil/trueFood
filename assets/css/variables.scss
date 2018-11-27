@@ -1,0 +1,66 @@
+$max-width: 1360px; //максимальная ширина сайта - дальше не растягивается
+$max-width2: 1440px; //максимальная ширина сайта - дальше не растягивается
+
+$f-size: 18px; //основной размер шрифта - от него все остальные шрифты меняются
+$page-offset: 40px; //отступ между элементами
+
+$tablet-width: 1023px; //режим планшета
+$phone-width: 639px; //режим телефона
+$phone-5: 320px; //iphone 5
+
+$form-row-padding: 25px; //отсуп между полями
+$bars-color: #38bd4c;
+$bars-color-hover: #3eaf50;
+$bars-color-active: #09a042;
+
+$link-color: #0070c9;
+$hover-link-color: #ed9307;
+
+$black-color: #222;
+$label-color: #666;
+$error-color: #fb5d5d;
+
+$bg-gray: #f5f5f5;
+
+$pc-padding: 32px;
+$tablet-padding: 24px;
+$phone-padding: 16px;
+$phone5-padding: 10px;
+
+@function f-size($font-size, $maket-size:18px) {
+    @return $f-size * ($font-size/$maket-size);
+}
+
+@function line-height($font-size, $line-height) {
+    @return decimal-round($line-height / $font-size, 1);
+}
+
+@function decimal-round ($number, $digits: 0, $mode: round) {
+    $n: 1;
+    @if type-of($number) != number {
+        @warn '#{ $number } is not a number.';
+        @return $number;
+    }
+    @if type-of($digits) != number {
+        @warn '#{ $digits } is not a number.';
+        @return $number;
+    } @else if not unitless($digits) {
+        @warn '#{ $digits } has a unit.';
+        @return $number;
+    }
+    @if $digits > 0 {
+        @for $i from 1 through $digits {
+            $n: $n * 10;
+        }
+    }
+    @if $mode == round {
+        @return round($number * $n) / $n;
+    } @else if $mode == ceil {
+        @return ceil($number * $n) / $n;
+    } @else if $mode == floor {
+        @return floor($number * $n) / $n;
+    } @else {
+        @warn '#{ $mode } is undefined keyword.';
+        @return $number;
+    }
+}
